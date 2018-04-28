@@ -56,8 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-      # 'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/')],
-       'DIRS':[], 
+       'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/')], 
        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,4 +100,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
